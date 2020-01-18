@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
 public class MovieDetailActivity extends AppCompatActivity {
     public static final String EXTRA_MOVIE = "extra_movie";
 
@@ -22,6 +24,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
         detailTitle.setText(movie.getTitle());
         detailDescription.setText(movie.getDescription());
-        detailPoster.setImageResource(movie.getPoster());
+        Glide.with(this)
+                .asBitmap()
+                .load(movie.getPoster())
+                .into(detailPoster);
     }
 }

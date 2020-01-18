@@ -30,15 +30,15 @@
     </string-array>
 
     <array name="data_poster">
-        <item>@drawable/ironman</item>
-        <item>@drawable/theincrediblehulk</item>
-        <item>@drawable/ironman2</item>
-        <item>@drawable/thor</item>
-        <item>@drawable/captainamerica</item>
-        <item>@drawable/theavengers</item>
-        <item>@drawable/ironman3</item>
-        <item>@drawable/thorthedarkworld</item>
-        <item>@drawable/captainamericathewintersoldier</item>
-        <item>@drawable/guardiansofthegalaxy</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/8/88/The_Incredible_Hulk_poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/e/ed/Iron_Man_2_poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/f/fc/Thor_poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/3/37/Captain_America_The_First_Avenger_poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/f/f9/TheAvengers2012Poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/d/d5/Iron_Man_3_theatrical_poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/7/7e/Thor_-_The_Dark_World_poster.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/e/e8/Captain_America_The_Winter_Soldier.jpg</item>
+        <item>https://upload.wikimedia.org/wikipedia/en/b/b5/Guardians_of_the_Galaxy_poster.jpg</item>
     </array>
 </resources>
