@@ -3,7 +3,7 @@
     <string name="title_movies">Movie Title</string>
     <string name="lorem">lorem ipsum dolor sit amet</string>
 
-    <string-array name="data_title">
+    <string-array name="data_title_movie">
         <item>Iron Man</item>
         <item>The Incredible Hulk</item>
         <item>Iron Man 2</item>
@@ -16,7 +16,7 @@
         <item>Guardians of the Galaxy</item>
     </string-array>
 
-    <string-array name="data_description">
+    <string-array name="data_description_movie">
         <item>2008`s Iron Man tells the story of Tony Stark, a billionaire industrialist and genius inventor who is kidnapped and forced to build a devastating weapon. Instead, using his intelligence and ingenuity, Tony builds a high-tech suit of armor and escapes captivity. When he uncovers a nefarious plot with global implications, he dons his powerful armor and vows to protect the world as Iron Man.</item>
         <item>In this new beginning, scientist Bruce Banner desperately hunts for a cure to the gamma radiation that poisoned his cells and unleashes the unbridled force of rage within him: The Hulk. Living in the shadows—cut off from a life he knew and the woman he loves, Betty Ross—Banner struggles to avoid the obsessive pursuit of his nemesis, General Thunderbolt Ross and the military machinery that seeks to capture him and brutally exploit his power. As all three grapple with the secrets that led to the Hulk`s creation, they are confronted with a monstrous new adversary known as the Abomination, whose destructive strength exceeds even the Hulk`s own. One scientist must make an agonizing final choice: accept a peaceful life as Bruce Banner or find heroism in the creature he holds inside—The Incredible Hulk.</item>
         <item>With the world now aware that he is Iron Man, billionaire inventor Tony Stark faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts and "Rhodey" Rhodes by his side, Tony must forge new alliances and confront a powerful new enemy.</item>
@@ -29,7 +29,7 @@
         <item>An action-packed, epic space adventure, Marvel`s "Guardians of the Galaxy," expands the Marvel Cinematic Universe into the cosmos, where brash adventurer Peter Quill finds himself the object of an unrelenting bounty hunt after stealing a mysterious orb coveted by Ronan, a powerful villain with ambitions that threaten the entire universe. To evade the ever-persistent Ronan, Quill is forced into an uneasy truce with a quartet of disparate misfits—Rocket, a gun-toting raccoon; Groot, a tree-like humanoid; the deadly and enigmatic Gamora; and the revenge-driven Drax the Destroyer. But when Quill discovers the true power of the orb and the menace it poses to the cosmos, he must do his best to rally his ragtag rivals for a last, desperate stand—with the galaxy`s fate in the balance.</item>
     </string-array>
 
-    <array name="data_poster">
+    <array name="data_poster_movie">
         <item>https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG</item>
         <item>https://upload.wikimedia.org/wikipedia/en/8/88/The_Incredible_Hulk_poster.jpg</item>
         <item>https://upload.wikimedia.org/wikipedia/en/e/ed/Iron_Man_2_poster.jpg</item>
@@ -41,4 +41,48 @@
         <item>https://upload.wikimedia.org/wikipedia/en/e/e8/Captain_America_The_Winter_Soldier.jpg</item>
         <item>https://upload.wikimedia.org/wikipedia/en/b/b5/Guardians_of_the_Galaxy_poster.jpg</item>
     </array>
+
+    <string-array name="data_title_tv_show">
+        <item>Agents of S.H.I.E.L.D.</item>
+        <item>Agent Carter</item>
+        <item>Inhumans</item>
+        <item>Daredevil</item>
+        <item>Jessica Jones</item>
+        <item>Luke Cage</item>
+        <item>Iron Fist</item>
+        <item>The Defenders</item>
+        <item>The Punisher</item>
+        <item>Runaways</item>
+    </string-array>
+
+    <string-array name="data_description_tv_show">
+        <item>Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.</item>
+        <item>It`s 1946, and peace has dealt Peggy Carter a serious blow as she finds herself marginalized when the men return home from fighting abroad. Working for the covert SSR (Strategic Scientific Reserve), Peggy must balance doing administrative work and going on secret missions for Howard Stark all while trying to navigate life as a single woman in America, in the wake of losing the love of her life - Steve Rogers.</item>
+        <item>After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.</item>
+        <item>Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell’s Kitchen as Daredevil.</item>
+        <item>After a tragic ending to her short-lived super hero stint, Jessica Jones is rebuilding her personal life and career as a detective who gets pulled into cases involving people with extraordinary abilities in New York City.</item>
+        <item>Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.</item>
+        <item>Danny Rand resurfaces 15 years after being presumed dead. Now, with the power of the Iron Fist, he seeks to reclaim his past and fulfill his destiny.</item>
+        <item>Daredevil, Jessica Jones, Luke Cage and Iron Fist join forces to take on common enemies as a sinister conspiracy threatens New York City.</item>
+        <item>A former Marine out to punish the criminals responsible for his family`s murder finds himself ensnared in a military conspiracy.</item>
+        <item>Every teenager thinks their parents are evil. What if you found out they actually were? Six diverse teenagers who can barely stand each other must unite against a common foe – their parents.</item>
+    </string-array>
+
+    <array name="data_poster_tv_show">
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/cXiETfFK1BTLest5fhTLfDLRdL6.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/mQWBExOnHrGVsjkpWczJjo6bhZy.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/6BCa0ehCpbtwP1WJi54W4v79gfI.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/wVadC1BT2w3hDh5Vq0J0LFFTrLP.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/8a7e2GNpMnjI2hgRZH3jq2c7ffv.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/9nWZZ1ghE0LuXEWJi7QjCymHygi.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/nv4nLXbDhcISPP8C1mgaxKU50KO.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg</item>
+        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/zceMrfO17AQkeWJZNra4O90s1vE.jpg</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_movie">Movie</string>
+    <string name="tab_tv_show">TV Show</string>
+
 </resources>
