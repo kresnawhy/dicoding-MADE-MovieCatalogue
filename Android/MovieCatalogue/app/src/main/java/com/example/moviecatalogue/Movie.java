@@ -15,7 +15,7 @@ class Movie implements Parcelable {
         description = in.readString();
     }
 
-    public Movie() {
+    Movie() {
         
     }
 
@@ -43,27 +43,27 @@ class Movie implements Parcelable {
         }
     };
 
-    public String getPoster() {
+    String getPoster() {
         return poster;
     }
 
-    public void setPoster(String poster) {
+    void setPoster(String poster) {
         this.poster = poster;
     }
 
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    void setTitle(String title) {
         this.title = title;
     }
 
-    public String getDescription() {
+    String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    void setDescription(String description) {
         this.description = description;
     }
 

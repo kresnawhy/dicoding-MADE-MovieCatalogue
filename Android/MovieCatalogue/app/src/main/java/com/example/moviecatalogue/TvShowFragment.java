@@ -47,7 +47,7 @@ public class TvShowFragment extends Fragment {
         movies.addAll(getListMovies());
     }
 
-    public ArrayList<Movie> getListMovies() {
+    private ArrayList<Movie> getListMovies() {
         String[] dataTitle = getResources().getStringArray(R.array.data_title_tv_show);
         String[] dataDescription = getResources().getStringArray(R.array.data_description_tv_show);
         String[] dataPoster = getResources().getStringArray(R.array.data_poster_tv_show);

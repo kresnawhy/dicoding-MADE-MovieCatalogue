@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class SectionPagerAdapter extends FragmentPagerAdapter {
     private final Context context;
 
-    public SectionPagerAdapter(Context context, FragmentManager fm) {
+    SectionPagerAdapter(Context context, FragmentManager fm) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.context = context;
     }

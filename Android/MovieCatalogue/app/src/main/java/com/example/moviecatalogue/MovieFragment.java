@@ -47,7 +47,7 @@ public class MovieFragment extends Fragment {
         movies.addAll(getListMovies());
     }
 
-    public ArrayList<Movie> getListMovies() {
+    private ArrayList<Movie> getListMovies() {
         String[] dataTitle = getResources().getStringArray(R.array.data_title_movie);
         String[] dataDescription = getResources().getStringArray(R.array.data_description_movie);
         String[] dataPoster = getResources().getStringArray(R.array.data_poster_movie);

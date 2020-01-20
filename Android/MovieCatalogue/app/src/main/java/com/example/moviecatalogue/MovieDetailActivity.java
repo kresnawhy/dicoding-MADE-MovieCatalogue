@@ -22,6 +22,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         ImageView detailPoster = findViewById(R.id.img_poster_detail);
 
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+        assert movie != null;
         detailTitle.setText(movie.getTitle());
         detailDescription.setText(movie.getDescription());
         Glide.with(this)

@@ -19,7 +19,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
 
     private ArrayList<Movie> listMovie;
 
-    public ListMovieAdapter(ArrayList<Movie> list) {
+    ListMovieAdapter(ArrayList<Movie> list) {
         this.listMovie = list;
     }
 
@@ -54,11 +54,11 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
         return listMovie.size();
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder {
+    class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
         TextView txtTitle, txtDescription;
 
-        public ListViewHolder(@NonNull View itemView) {
+        ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPoster = itemView.findViewById(R.id.img_poster);
             txtTitle = itemView.findViewById(R.id.txt_title);
