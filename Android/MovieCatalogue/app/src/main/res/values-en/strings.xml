@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovieCatalogue</string>
+    <string name="app_name">Marvel Cinematic Universe</string>
     <string name="title_movies">Movie Title</string>
     <string name="lorem">lorem ipsum dolor sit amet</string>
 
@@ -85,5 +85,6 @@
     <string name="tab_movie">Movie</string>
     <string name="tab_tv_show">TV Show</string>
     <string name="change_language_settings">Change Language</string>
+    <string name="synopsis">Synopsis</string>
 
 </resources>

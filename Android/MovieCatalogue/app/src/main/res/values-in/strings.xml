@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovieCatalogue</string>
+    <string name="app_name">Marvel Cinematic Universe</string>
     <string name="title_movies">Movie Title</string>
     <string name="lorem">lorem ipsum dolor sit amet</string>
 
@@ -85,5 +85,6 @@
     <string name="tab_movie">Film</string>
     <string name="tab_tv_show">Acara TV</string>
     <string name="change_language_settings">Ubah Bahasa</string>
+    <string name="synopsis">Sinopsis</string>
 
 </resources>

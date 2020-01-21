@@ -27,9 +27,9 @@
         android:layout_below="@id/txt_title"
         android:layout_marginStart="26dp"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/img_poster"
+        android:layout_toEndOf="@id/img_poster"
         android:ellipsize="end"
-        android:maxLines="3"
+        android:maxLines="4"
         android:text="@string/lorem"/>
 
 </RelativeLayout>
