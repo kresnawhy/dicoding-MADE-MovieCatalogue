@@ -6,11 +6,13 @@ import android.os.Parcelable;
 class Movie implements Parcelable {
 
     private String poster;
+    private String backdrop;
     private String title;
     private String description;
 
     private Movie(Parcel in) {
         poster = in.readString();
+        backdrop = in.readString();
         title = in.readString();
         description = in.readString();
     }
@@ -22,6 +24,7 @@ class Movie implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(poster);
+        dest.writeString(backdrop);
         dest.writeString(title);
         dest.writeString(description);
     }
@@ -49,6 +52,14 @@ class Movie implements Parcelable {
 
     void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    String getBackdrop() {
+        return backdrop;
+    }
+
+    void setBackdrop(String backdrop) {
+        this.backdrop = backdrop;
     }
 
     String getTitle() {

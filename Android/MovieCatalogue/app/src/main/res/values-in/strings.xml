@@ -1,90 +1,11 @@
 <resources>
-    <string name="app_name">Marvel Cinematic Universe</string>
+    <string name="app_name">Katalog Film</string>
     <string name="title_movies">Movie Title</string>
     <string name="lorem">lorem ipsum dolor sit amet</string>
-
-    <string-array name="data_title_movie">
-        <item>Iron Man</item>
-        <item>The Incredible Hulk</item>
-        <item>Iron Man 2</item>
-        <item>Thor</item>
-        <item>Captain America: The First Avenger</item>
-        <item>Marvel`s The Avengers</item>
-        <item>Iron Man 3</item>
-        <item>Thor: The Dark World</item>
-        <item>Captain America: The Winter Soldier</item>
-        <item>Guardians of the Galaxy</item>
-    </string-array>
-
-    <string-array name="data_description_movie">
-        <item>Iron Man 2008 bercerita tentang Tony Stark, seorang industrialis miliarder dan penemu jenius yang diculik dan dipaksa untuk membangun senjata yang menghancurkan. Alih-alih, menggunakan kecerdasan dan kecerdikannya, Tony membangun baju zirah berteknologi tinggi dan lolos dari penawanan. Ketika ia mengungkap plot jahat dengan implikasi global, ia mengenakan baju besinya yang kuat dan bersumpah untuk melindungi dunia sebagai Manusia Besi. </item>
-        <item>Di awal yang baru ini, ilmuwan Bruce Banner mati-matian mencari obat untuk radiasi gamma yang meracuni sel-selnya dan melepaskan kekuatan kemarahan yang tak terkendali di dalam dirinya: The Hulk. Hidup dalam bayang-bayang — terputus dari kehidupan yang dikenalnya dan wanita yang dicintainya, Betty Ross — Banner berjuang untuk menghindari pencarian obsesif musuh bebuyutannya, Jenderal Thunderbolt Ross dan mesin militer yang berupaya menangkapnya dan secara brutal memanfaatkan kekuatannya. Ketika ketiganya bergulat dengan rahasia yang mengarah pada penciptaan Hulk, mereka dihadapkan dengan musuh baru yang mengerikan yang dikenal sebagai Kekejian, yang kekuatan destruktifnya melebihi bahkan milik Hulk. Seorang ilmuwan harus membuat pilihan terakhir yang menyakitkan: menerima kehidupan yang damai sebagai Bruce Banner atau menemukan kepahlawanan pada makhluk yang ia pegang di dalamnya — The Incredible Hulk. </item>
-        <item>Dengan dunia sekarang sadar bahwa dia adalah Manusia Besi, penemu miliarder Tony Stark menghadapi tekanan dari semua pihak untuk berbagi teknologinya dengan militer. Dia enggan membocorkan rahasia baju lapis baja, takut informasi akan jatuh ke tangan yang salah. Dengan Pepper Potts dan "Rhodey" Rhodes di sisinya, Tony harus menjalin aliansi baru dan menghadapi musuh baru yang kuat. </item>
-        <item>Sebagai putra Odin, raja para dewa Norse, Thor akan segera mewarisi takhta Asgard dari ayahnya yang sudah lanjut usia. Namun, pada hari dia dinobatkan, Thor bereaksi dengan brutal ketika musuh para dewa, Frost Giants, memasuki istana karena melanggar perjanjian mereka. Sebagai hukuman, Odin mengusir Thor ke Bumi. Sementara Loki, saudara lelaki Thor, merencanakan kejahatan di Asgard, Thor, yang sekarang kehilangan kekuatannya, menghadapi ancaman terbesarnya. </item>
-        <item>Marvel`s "Captain America: The First Avenger" berfokus pada hari-hari awal Marvel Universe ketika Steve Rogers menjadi sukarelawan untuk berpartisipasi dalam program eksperimental yang mengubahnya menjadi Super Soldier yang dikenal sebagai Captain America. </item>
-        <item>Marvel Studios hadir bersama Paramount Pictures "Marvel`s The Avengers" - tim pahlawan super seumur hidup, menampilkan pahlawan super Marvel Iron Man yang ikonik, Hulk Luar Biasa, Thor, Captain America, Hawkeye, dan Black Widow. Ketika musuh yang tak terduga muncul yang mengancam keselamatan dan keamanan global, Nick Fury, Direktur agen penjaga perdamaian internasional yang dikenal sebagai S.H.I.E.L.D, menemukan dirinya membutuhkan sebuah tim untuk menarik dunia kembali dari ambang bencana. Menjangkau dunia, upaya perekrutan yang berani dimulai. </item>
-        <item>Marvel "Iron Man 3" mengadu industrialis Tony Stark / Iron Man yang brash-tapi-brilian melawan musuh yang jangkauannya tidak mengenal batas. Ketika Stark menemukan dunia pribadinya hancur di tangan musuhnya, ia memulai pencarian yang mengerikan untuk menemukan mereka yang bertanggung jawab. Perjalanan ini, pada setiap kesempatan, akan menguji keberaniannya. Dengan punggung menempel ke dinding, Stark dibiarkan bertahan hidup dengan perangkatnya sendiri, mengandalkan kecerdikannya dan naluri untuk melindungi orang-orang terdekatnya. Saat ia berjuang kembali, Stark menemukan jawaban untuk pertanyaan yang diam-diam menghantuinya: apakah pria itu yang membuat jas atau apakah yang membuat pria itu </item>
-        <item>Sebagai buntut dari Marvel`s "Thor" dan "Marvel`s The Avengers," Thor berjuang untuk memulihkan ketertiban di seluruh kosmos … tetapi ras kuno yang dipimpin oleh Malekith yang pendendam kembali untuk menjerumuskan alam semesta kembali ke kegelapan. Berhadapan dengan musuh yang bahkan Odin dan Asgard tidak dapat bertahan, Thor harus memulai perjalanannya yang paling berbahaya dan pribadi, yang akan menyatukannya kembali dengan Jane Foster dan memaksanya untuk mengorbankan segalanya untuk menyelamatkan kita semua. </item>
-        <item>Setelah peristiwa bencana besar di New York dengan The Avengers, Marvel`s "Captain America: The Winter Soldier," menemukan Steve Rogers, alias Captain America, hidup dengan tenang di Washington, D.C. dan berusaha menyesuaikan diri dengan dunia modern. Tetapi ketika S.H.I.E.L.D. kolega diserang, Steve menjadi terlibat dalam jaringan intrik yang mengancam dunia. Bergabung dengan pasukan Black Widow, Kapten Amerika berjuang untuk mengekspos konspirasi yang terus melebar sambil melawan para pembunuh profesional yang dikirim untuk membungkamnya di setiap kesempatan. Ketika ruang lingkup penuh dari plot jahat diungkapkan, Kapten Amerika dan Janda Hitam meminta bantuan sekutu baru, Falcon. Namun, mereka segera menghadapi musuh yang tak terduga dan tangguh — Prajurit Musim Dingin. </item>
-        <item>Petualangan luar angkasa epik yang penuh aksi, Marvel`s "Guardians of the Galaxy," memperluas Marvel Cinematic Universe ke dalam kosmos, di mana petualang kurang ajar Peter Quill menemukan dirinya sendiri objek perburuan hadiah tanpa henti setelah mencuri bola misterius didambakan oleh Ronan, penjahat yang kuat dengan ambisi yang mengancam seluruh alam semesta. Untuk menghindari Ronan yang terus-menerus gigih, Quill dipaksa melakukan gencatan senjata dengan kuartet yang berbeda-beda — Rocket, rakun yang membawa senjata; Groot, humanoid seperti pohon; Gamora yang mematikan dan penuh teka-teki; dan Drax the Destroyer yang digerakkan oleh balas dendam. Tetapi ketika Quill menemukan kekuatan sebenarnya dari bola itu dan ancaman yang ditimbulkannya pada kosmos, ia harus melakukan yang terbaik untuk mengerahkan saingannya yang kurus kering untuk yang terakhir, sikap putus asa — dengan nasib galaksi dalam keseimbangan. </item>
-    </string-array>
-
-    <array name="data_poster_movie">
-        <item>https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/8/88/The_Incredible_Hulk_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/e/ed/Iron_Man_2_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/f/fc/Thor_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/3/37/Captain_America_The_First_Avenger_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/f/f9/TheAvengers2012Poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/d/d5/Iron_Man_3_theatrical_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/7/7e/Thor_-_The_Dark_World_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/e/e8/Captain_America_The_Winter_Soldier.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/b/b5/Guardians_of_the_Galaxy_poster.jpg</item>
-    </array>
-
-    <string-array name="data_title_tv_show">
-        <item>Agents of S.H.I.E.L.D.</item>
-        <item>Agent Carter</item>
-        <item>Inhumans</item>
-        <item>Daredevil</item>
-        <item>Jessica Jones</item>
-        <item>Luke Cage</item>
-        <item>Iron Fist</item>
-        <item>The Defenders</item>
-        <item>The Punisher</item>
-        <item>Runaways</item>
-    </string-array>
-
-    <string-array name="data_description_tv_show">
-        <item>Agen Phil Coulson dari S.H.I.E.L.D. (Divisi Intervensi, Penegakan dan Logistik Tanah Air Strategis) membentuk tim agen untuk menyelidiki yang baru, yang aneh dan yang tidak diketahui di seluruh dunia, melindungi yang biasa dari yang luar biasa. </item>
-        <item>Ini tahun 1946, dan perdamaian telah memberikan pukulan serius bagi Peggy Carter ketika dia menemukan dirinya terpinggirkan ketika orang-orang itu pulang dari pertempuran di luar negeri. Bekerja untuk SSR (Cadangan Ilmiah Strategis) terselubung, Peggy harus menyeimbangkan melakukan pekerjaan administratif dan menjalankan misi rahasia untuk Howard Stark sambil mencoba menavigasi kehidupan sebagai wanita lajang di Amerika, setelah kehilangan cinta dalam hidupnya - Steve Rogers. </item>
-        <item>Setelah Keluarga Kerajaan Inhumans terpecah oleh kudeta militer, mereka nyaris tidak melarikan diri ke Hawaii di mana interaksi mengejutkan mereka dengan dunia yang rimbun dan kemanusiaan di sekitar mereka terbukti tidak hanya menyelamatkan mereka, tetapi Bumi sendiri. </item>
-        <item>Pengacara hari demi hari, Matt Murdock menggunakan akal sehatnya dari dibutakan sebagai anak muda untuk melawan kejahatan di malam hari di jalan-jalan Hell`s Kitchen sebagai Daredevil. </item>
-        <item>Setelah akhir yang tragis dari tugas pahlawan supernya yang berumur pendek, Jessica Jones membangun kembali kehidupan pribadi dan kariernya sebagai seorang detektif yang terlibat dalam kasus-kasus yang melibatkan orang-orang dengan kemampuan luar biasa di New York City. </item>
-        <item>Dengan kekuatan luar biasa dan daya tahan oleh eksperimen yang disabotase, seorang pria yang dituduh melarikan diri dari penjara menjadi pahlawan super untuk disewa. </item>
-        <item>Danny Rand muncul kembali 15 tahun setelah dianggap meninggal. Sekarang, dengan kekuatan Iron Fist, ia berusaha untuk merebut kembali masa lalunya dan memenuhi takdirnya. </item>
-        <item>Daredevil, Jessica Jones, Luke Cage dan Iron Fist bergabung untuk menghadapi musuh bersama saat konspirasi menyeramkan mengancam Kota New York. </item>
-        <item>Seorang mantan Marinir untuk menghukum para penjahat yang bertanggung jawab atas pembunuhan keluarganya mendapati dirinya terjerat dalam konspirasi militer. </item>
-        <item>Setiap remaja menganggap orang tua mereka jahat. Bagaimana jika Anda tahu mereka sebenarnya? Enam remaja yang beragam yang nyaris tidak dapat saling berdiri harus bersatu melawan musuh bersama - orang tua mereka. </item>
-    </string-array>
-
-    <array name="data_poster_tv_show">
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/cXiETfFK1BTLest5fhTLfDLRdL6.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/mQWBExOnHrGVsjkpWczJjo6bhZy.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/6BCa0ehCpbtwP1WJi54W4v79gfI.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/wVadC1BT2w3hDh5Vq0J0LFFTrLP.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/8a7e2GNpMnjI2hgRZH3jq2c7ffv.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/9nWZZ1ghE0LuXEWJi7QjCymHygi.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/nv4nLXbDhcISPP8C1mgaxKU50KO.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/zceMrfO17AQkeWJZNra4O90s1vE.jpg</item>
-    </array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="tab_movie">Film</string>
     <string name="tab_tv_show">Acara TV</string>
     <string name="change_language_settings">Ubah Bahasa</string>
     <string name="synopsis">Sinopsis</string>
-
 </resources>

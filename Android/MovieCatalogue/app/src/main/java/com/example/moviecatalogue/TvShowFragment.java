@@ -1,25 +1,31 @@
 package com.example.moviecatalogue;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TvShowFragment extends Fragment {
-
     private RecyclerView rvMovies;
     private ArrayList<Movie> movies = new ArrayList<>();
+    private ProgressBar progressBar;
+    private ListMovieAdapter listMovieAdapter;
 
     public TvShowFragment() {
         // Required empty public constructor
@@ -33,41 +39,55 @@ public class TvShowFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_movie, container, false);
 
         rvMovies = view.findViewById(R.id.rv_movies);
-        rvMovies.setHasFixedSize(true);
+        progressBar = view.findViewById(R.id.progressBar);
 
         showRecyclerList();
 
         return view;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        movies.addAll(getListMovies());
-    }
-
-    private ArrayList<Movie> getListMovies() {
-        String[] dataTitle = getResources().getStringArray(R.array.data_title_tv_show);
-        String[] dataDescription = getResources().getStringArray(R.array.data_description_tv_show);
-        String[] dataPoster = getResources().getStringArray(R.array.data_poster_tv_show);
-
-        ArrayList<Movie> listMovie = new ArrayList<>();
-        for (int i = 0; i < dataTitle.length; i++) {
-            Movie movie = new Movie();
-            movie.setTitle(dataTitle[i]);
-            movie.setDescription(dataDescription[i]);
-            movie.setPoster(dataPoster[i]);
-
-            listMovie.add(movie);
-        }
-        return listMovie;
-    }
-
     private void showRecyclerList(){
         rvMovies.setLayoutManager(new LinearLayoutManager(getActivity()));
-        ListMovieAdapter listMovieAdapter = new ListMovieAdapter(movies);
+        listMovieAdapter = new ListMovieAdapter(movies);
+        listMovieAdapter.notifyDataSetChanged();
         rvMovies.setAdapter(listMovieAdapter);
+
+        MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+
+        mainViewModel.setTvShow();
+
+        showLoading(true);
+
+        listMovieAdapter.setOnItemClickCallback(new ListMovieAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Movie movie) {
+                showSelectedMovie(movie);
+            }
+        });
+
+        mainViewModel.getMovie().observe(Objects.requireNonNull(getActivity()), new Observer<ArrayList<Movie>>() {
+            @Override
+            public void onChanged(ArrayList<Movie> movies) {
+                if (movies != null) {
+                    listMovieAdapter.setListMovie(movies);
+                    showLoading(false);
+                }
+            }
+        });
+    }
+
+    private void showSelectedMovie(Movie movie) {
+        Intent movieDetail = new Intent(getContext(), MovieDetailActivity.class);
+        movieDetail.putExtra(MovieDetailActivity.EXTRA_MOVIE, movie);
+        Objects.requireNonNull(getContext()).startActivity(movieDetail);
+    }
+
+    private void showLoading(Boolean state) {
+        if (state) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
 }

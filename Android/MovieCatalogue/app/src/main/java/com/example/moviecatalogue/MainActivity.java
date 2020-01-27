@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setUpViewPager();
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_change_settings) {
             Intent localization = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(localization);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

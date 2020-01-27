@@ -1,90 +1,11 @@
 <resources>
-    <string name="app_name">Marvel Cinematic Universe</string>
+    <string name="app_name">Movie Catalogue</string>
     <string name="title_movies">Movie Title</string>
     <string name="lorem">lorem ipsum dolor sit amet</string>
-
-    <string-array name="data_title_movie">
-        <item>Iron Man</item>
-        <item>The Incredible Hulk</item>
-        <item>Iron Man 2</item>
-        <item>Thor</item>
-        <item>Captain America: The First Avenger</item>
-        <item>Marvel`s The Avengers</item>
-        <item>Iron Man 3</item>
-        <item>Thor: The Dark World</item>
-        <item>Captain America: The Winter Soldier</item>
-        <item>Guardians of the Galaxy</item>
-    </string-array>
-
-    <string-array name="data_description_movie">
-        <item>2008`s Iron Man tells the story of Tony Stark, a billionaire industrialist and genius inventor who is kidnapped and forced to build a devastating weapon. Instead, using his intelligence and ingenuity, Tony builds a high-tech suit of armor and escapes captivity. When he uncovers a nefarious plot with global implications, he dons his powerful armor and vows to protect the world as Iron Man.</item>
-        <item>In this new beginning, scientist Bruce Banner desperately hunts for a cure to the gamma radiation that poisoned his cells and unleashes the unbridled force of rage within him: The Hulk. Living in the shadows—cut off from a life he knew and the woman he loves, Betty Ross—Banner struggles to avoid the obsessive pursuit of his nemesis, General Thunderbolt Ross and the military machinery that seeks to capture him and brutally exploit his power. As all three grapple with the secrets that led to the Hulk`s creation, they are confronted with a monstrous new adversary known as the Abomination, whose destructive strength exceeds even the Hulk`s own. One scientist must make an agonizing final choice: accept a peaceful life as Bruce Banner or find heroism in the creature he holds inside—The Incredible Hulk.</item>
-        <item>With the world now aware that he is Iron Man, billionaire inventor Tony Stark faces pressure from all sides to share his technology with the military. He is reluctant to divulge the secrets of his armored suit, fearing the information will fall into the wrong hands. With Pepper Potts and "Rhodey" Rhodes by his side, Tony must forge new alliances and confront a powerful new enemy.</item>
-        <item>As the son of Odin, king of the Norse gods, Thor will soon inherit the throne of Asgard from his aging father. However, on the day that he is to be crowned, Thor reacts with brutality when the gods` enemies, the Frost Giants, enter the palace in violation of their treaty. As punishment, Odin banishes Thor to Earth. While Loki, Thor`s brother, plots mischief in Asgard, Thor, now stripped of his powers, faces his greatest threat.</item>
-        <item>Marvel`s "Captain America: The First Avenger" focuses on the early days of the Marvel Universe when Steve Rogers volunteers to participate in an experimental program that turns him into the Super Soldier known as Captain America.</item>
-        <item>Marvel Studios presents in association with Paramount Pictures "Marvel`s The Avengers"—the super hero team up of a lifetime, featuring iconic Marvel super heroes Iron Man, the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow. When an unexpected enemy emerges that threatens global safety and security, Nick Fury, Director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins.</item>
-        <item>Marvel`s "Iron Man 3" pits brash-but-brilliant industrialist Tony Stark/Iron Man against an enemy whose reach knows no bounds. When Stark finds his personal world destroyed at his enemy`s hands, he embarks on a harrowing quest to find those responsible. This journey, at every turn, will test his mettle. With his back against the wall, Stark is left to survive by his own devices, relying on his ingenuity and instincts to protect those closest to him. As he fights his way back, Stark discovers the answer to the question that has secretly haunted him: does the man make the suit or does the suit make the man</item>
-        <item>In the aftermath of Marvel`s "Thor" and "Marvel`s The Avengers," Thor fights to restore order across the cosmos…but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.</item>
-        <item>After the cataclysmic events in New York with The Avengers, Marvel`s "Captain America: The Winter Soldier," finds Steve Rogers, aka Captain America, living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put the world at risk. Joining forces with the Black Widow, Captain America struggles to expose the ever-widening conspiracy while fighting off professional assassins sent to silence him at every turn. When the full scope of the villainous plot is revealed, Captain America and the Black Widow enlist the help of a new ally, the Falcon. However, they soon find themselves up against an unexpected and formidable enemy—the Winter Soldier.</item>
-        <item>An action-packed, epic space adventure, Marvel`s "Guardians of the Galaxy," expands the Marvel Cinematic Universe into the cosmos, where brash adventurer Peter Quill finds himself the object of an unrelenting bounty hunt after stealing a mysterious orb coveted by Ronan, a powerful villain with ambitions that threaten the entire universe. To evade the ever-persistent Ronan, Quill is forced into an uneasy truce with a quartet of disparate misfits—Rocket, a gun-toting raccoon; Groot, a tree-like humanoid; the deadly and enigmatic Gamora; and the revenge-driven Drax the Destroyer. But when Quill discovers the true power of the orb and the menace it poses to the cosmos, he must do his best to rally his ragtag rivals for a last, desperate stand—with the galaxy`s fate in the balance.</item>
-    </string-array>
-
-    <array name="data_poster_movie">
-        <item>https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/8/88/The_Incredible_Hulk_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/e/ed/Iron_Man_2_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/f/fc/Thor_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/3/37/Captain_America_The_First_Avenger_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/f/f9/TheAvengers2012Poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/d/d5/Iron_Man_3_theatrical_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/7/7e/Thor_-_The_Dark_World_poster.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/e/e8/Captain_America_The_Winter_Soldier.jpg</item>
-        <item>https://upload.wikimedia.org/wikipedia/en/b/b5/Guardians_of_the_Galaxy_poster.jpg</item>
-    </array>
-
-    <string-array name="data_title_tv_show">
-        <item>Agents of S.H.I.E.L.D.</item>
-        <item>Agent Carter</item>
-        <item>Inhumans</item>
-        <item>Daredevil</item>
-        <item>Jessica Jones</item>
-        <item>Luke Cage</item>
-        <item>Iron Fist</item>
-        <item>The Defenders</item>
-        <item>The Punisher</item>
-        <item>Runaways</item>
-    </string-array>
-
-    <string-array name="data_description_tv_show">
-        <item>Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.</item>
-        <item>It`s 1946, and peace has dealt Peggy Carter a serious blow as she finds herself marginalized when the men return home from fighting abroad. Working for the covert SSR (Strategic Scientific Reserve), Peggy must balance doing administrative work and going on secret missions for Howard Stark all while trying to navigate life as a single woman in America, in the wake of losing the love of her life - Steve Rogers.</item>
-        <item>After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.</item>
-        <item>Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell’s Kitchen as Daredevil.</item>
-        <item>After a tragic ending to her short-lived super hero stint, Jessica Jones is rebuilding her personal life and career as a detective who gets pulled into cases involving people with extraordinary abilities in New York City.</item>
-        <item>Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.</item>
-        <item>Danny Rand resurfaces 15 years after being presumed dead. Now, with the power of the Iron Fist, he seeks to reclaim his past and fulfill his destiny.</item>
-        <item>Daredevil, Jessica Jones, Luke Cage and Iron Fist join forces to take on common enemies as a sinister conspiracy threatens New York City.</item>
-        <item>A former Marine out to punish the criminals responsible for his family`s murder finds himself ensnared in a military conspiracy.</item>
-        <item>Every teenager thinks their parents are evil. What if you found out they actually were? Six diverse teenagers who can barely stand each other must unite against a common foe – their parents.</item>
-    </string-array>
-
-    <array name="data_poster_tv_show">
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/cXiETfFK1BTLest5fhTLfDLRdL6.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/mQWBExOnHrGVsjkpWczJjo6bhZy.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/6BCa0ehCpbtwP1WJi54W4v79gfI.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/wVadC1BT2w3hDh5Vq0J0LFFTrLP.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/8a7e2GNpMnjI2hgRZH3jq2c7ffv.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/9nWZZ1ghE0LuXEWJi7QjCymHygi.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/nv4nLXbDhcISPP8C1mgaxKU50KO.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/s2YM9zHF3tf2coi8t0UEzYrOHg8.jpg</item>
-        <item>https://image.tmdb.org/t/p/w600_and_h900_bestv2/zceMrfO17AQkeWJZNra4O90s1vE.jpg</item>
-    </array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="tab_movie">Movie</string>
     <string name="tab_tv_show">TV Show</string>
     <string name="change_language_settings">Change Language</string>
     <string name="synopsis">Synopsis</string>
-
 </resources>
