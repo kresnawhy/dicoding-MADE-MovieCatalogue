@@ -21,11 +21,11 @@ import cz.msebera.android.httpclient.Header;
 public class MainViewModel extends ViewModel {
     private String TMDB_API_KEY = BuildConfig.API_KEY;
     private String language = Locale.getDefault().getDisplayLanguage();
-    private MutableLiveData<ArrayList<Movie>> listMovies = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<Item>> listItems = new MutableLiveData<>();
 
     void setMovie() {
         AsyncHttpClient client = new AsyncHttpClient();
-        final ArrayList<Movie> listItems = new ArrayList<>();
+        final ArrayList<Item> listMovies = new ArrayList<>();
         String url = "https://api.themoviedb.org/3/discover/movie?api_key=" + TMDB_API_KEY;
 
         if (language.equalsIgnoreCase("INDONESIA")) {
@@ -44,15 +44,15 @@ public class MainViewModel extends ViewModel {
 
                     for (int i = 0; i < 10; i++) {
                         JSONObject movies = list.getJSONObject(i);
-                        Movie movie = new Movie();
-                        movie.setPoster("http://image.tmdb.org/t/p/w185" + movies.getString("poster_path"));
-                        movie.setBackdrop("http://image.tmdb.org/t/p/w780" + movies.getString("backdrop_path"));
-                        movie.setTitle(movies.getString("title"));
-                        movie.setDescription(movies.getString("overview"));
-                        listItems.add(movie);
+                        Item item = new Item();
+                        item.setPoster("http://image.tmdb.org/t/p/w185" + movies.getString("poster_path"));
+                        item.setBackdrop("http://image.tmdb.org/t/p/w780" + movies.getString("backdrop_path"));
+                        item.setTitle(movies.getString("title"));
+                        item.setDescription(movies.getString("overview"));
+                        listMovies.add(item);
                     }
 
-                    listMovies.postValue(listItems);
+                    listItems.postValue(listMovies);
                 } catch (Exception e) {
                     Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
@@ -67,7 +67,7 @@ public class MainViewModel extends ViewModel {
 
     void setTvShow() {
         AsyncHttpClient client = new AsyncHttpClient();
-        final ArrayList<Movie> listItems = new ArrayList<>();
+        final ArrayList<Item> listTvShows = new ArrayList<>();
         String url = "https://api.themoviedb.org/3/discover/tv?api_key=" + TMDB_API_KEY;
 
         if (language.equalsIgnoreCase("INDONESIA")) {
@@ -85,16 +85,16 @@ public class MainViewModel extends ViewModel {
                     JSONArray list = responseObject.getJSONArray("results");
 
                     for (int i = 0; i < 10; i++) {
-                        JSONObject movies = list.getJSONObject(i);
-                        Movie movie = new Movie();
-                        movie.setPoster("http://image.tmdb.org/t/p/w185" + movies.getString("poster_path"));
-                        movie.setBackdrop("http://image.tmdb.org/t/p/w780" + movies.getString("backdrop_path"));
-                        movie.setTitle(movies.getString("name"));
-                        movie.setDescription(movies.getString("overview"));
-                        listItems.add(movie);
+                        JSONObject tv_shows = list.getJSONObject(i);
+                        Item item = new Item();
+                        item.setPoster("http://image.tmdb.org/t/p/w185" + tv_shows.getString("poster_path"));
+                        item.setBackdrop("http://image.tmdb.org/t/p/w780" + tv_shows.getString("backdrop_path"));
+                        item.setTitle(tv_shows.getString("name"));
+                        item.setDescription(tv_shows.getString("overview"));
+                        listTvShows.add(item);
                     }
 
-                    listMovies.postValue(listItems);
+                    listItems.postValue(listTvShows);
                 } catch (Exception e) {
                     Log.d("Exception", Objects.requireNonNull(e.getMessage()));
                 }
@@ -107,7 +107,7 @@ public class MainViewModel extends ViewModel {
         });
     }
 
-    LiveData<ArrayList<Movie>> getMovie() {
-        return listMovies;
+    LiveData<ArrayList<Item>> getItem() {
+        return listItems;
     }
 }

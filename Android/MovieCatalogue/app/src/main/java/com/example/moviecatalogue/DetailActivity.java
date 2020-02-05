@@ -13,14 +13,14 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 
 import java.util.Objects;
 
-public class MovieDetailActivity extends AppCompatActivity {
-    public static final String EXTRA_MOVIE = "extra_movie";
+public class DetailActivity extends AppCompatActivity {
+    public static final String EXTRA_ITEM = "extra_item";
     ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_detail);
+        setContentView(R.layout.activity_detail);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
@@ -32,19 +32,19 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         showLoading(true);
 
-        Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+        Item item = getIntent().getParcelableExtra(EXTRA_ITEM);
 
-        if (movie != null) {
-            detailTitle.setText(movie.getTitle());
-            detailDescription.setText(movie.getDescription());
+        if (item != null) {
+            detailTitle.setText(item.getTitle());
+            detailDescription.setText(item.getDescription());
             Glide.with(this)
                     .asBitmap()
-                    .load(movie.getPoster())
+                    .load(item.getPoster())
                     .transform(new RoundedCorners(30))
                     .into(detailPoster);
             Glide.with(this)
                     .asBitmap()
-                    .load(movie.getBackdrop())
+                    .load(item.getBackdrop())
                     .into(Backdrop);
             showLoading(false);
         }

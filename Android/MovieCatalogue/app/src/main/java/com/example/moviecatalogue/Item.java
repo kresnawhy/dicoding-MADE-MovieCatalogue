@@ -3,21 +3,21 @@ package com.example.moviecatalogue;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class Movie implements Parcelable {
+class Item implements Parcelable {
 
     private String poster;
     private String backdrop;
     private String title;
     private String description;
 
-    private Movie(Parcel in) {
+    private Item(Parcel in) {
         poster = in.readString();
         backdrop = in.readString();
         title = in.readString();
         description = in.readString();
     }
 
-    Movie() {
+    Item() {
         
     }
 
@@ -34,15 +34,15 @@ class Movie implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+    public static final Creator<Item> CREATOR = new Creator<Item>() {
         @Override
-        public Movie createFromParcel(Parcel in) {
-            return new Movie(in);
+        public Item createFromParcel(Parcel in) {
+            return new Item(in);
         }
 
         @Override
-        public Movie[] newArray(int size) {
-            return new Movie[size];
+        public Item[] newArray(int size) {
+            return new Item[size];
         }
     };
 

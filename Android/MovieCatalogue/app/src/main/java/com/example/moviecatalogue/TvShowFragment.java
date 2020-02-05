@@ -23,9 +23,9 @@ import java.util.Objects;
  */
 public class TvShowFragment extends Fragment {
     private RecyclerView rvMovies;
-    private ArrayList<Movie> movies = new ArrayList<>();
+    private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
-    private ListMovieAdapter listMovieAdapter;
+    private ListItemAdapter listItemAdapter;
 
     public TvShowFragment() {
         // Required empty public constructor
@@ -48,9 +48,9 @@ public class TvShowFragment extends Fragment {
 
     private void showRecyclerList(){
         rvMovies.setLayoutManager(new LinearLayoutManager(getActivity()));
-        listMovieAdapter = new ListMovieAdapter(movies);
-        listMovieAdapter.notifyDataSetChanged();
-        rvMovies.setAdapter(listMovieAdapter);
+        listItemAdapter = new ListItemAdapter(items);
+        listItemAdapter.notifyDataSetChanged();
+        rvMovies.setAdapter(listItemAdapter);
 
         MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
 
@@ -58,28 +58,28 @@ public class TvShowFragment extends Fragment {
 
         showLoading(true);
 
-        listMovieAdapter.setOnItemClickCallback(new ListMovieAdapter.OnItemClickCallback() {
+        listItemAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback() {
             @Override
-            public void onItemClicked(Movie movie) {
-                showSelectedMovie(movie);
+            public void onItemClicked(Item item) {
+                showSelectedTvShow(item);
             }
         });
 
-        mainViewModel.getMovie().observe(Objects.requireNonNull(getActivity()), new Observer<ArrayList<Movie>>() {
+        mainViewModel.getItem().observe(Objects.requireNonNull(getActivity()), new Observer<ArrayList<Item>>() {
             @Override
-            public void onChanged(ArrayList<Movie> movies) {
-                if (movies != null) {
-                    listMovieAdapter.setListMovie(movies);
+            public void onChanged(ArrayList<Item> items) {
+                if (items != null) {
+                    listItemAdapter.setListItem(items);
                     showLoading(false);
                 }
             }
         });
     }
 
-    private void showSelectedMovie(Movie movie) {
-        Intent movieDetail = new Intent(getContext(), MovieDetailActivity.class);
-        movieDetail.putExtra(MovieDetailActivity.EXTRA_MOVIE, movie);
-        Objects.requireNonNull(getContext()).startActivity(movieDetail);
+    private void showSelectedTvShow(Item item) {
+        Intent tvshowDetail = new Intent(getContext(), DetailActivity.class);
+        tvshowDetail.putExtra(DetailActivity.EXTRA_ITEM, item);
+        Objects.requireNonNull(getContext()).startActivity(tvshowDetail);
     }
 
     private void showLoading(Boolean state) {

@@ -15,18 +15,18 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
-public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.ListViewHolder> {
+public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListViewHolder> {
 
-    private ArrayList<Movie> listMovie;
+    private ArrayList<Item> listItem;
     private OnItemClickCallback onItemClickCallback;
 
-    ListMovieAdapter(ArrayList<Movie> listMovie) {
-        this.listMovie = listMovie;
+    ListItemAdapter(ArrayList<Item> listItem) {
+        this.listItem = listItem;
     }
 
-    void setListMovie(ArrayList<Movie> list) {
-        listMovie.clear();
-        listMovie.addAll(list);
+    void setListItem(ArrayList<Item> list) {
+        listItem.clear();
+        listItem.addAll(list);
         notifyDataSetChanged();
     }
 
@@ -37,18 +37,18 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
         return new ListViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, final int position) {
-        holder.bind(listMovie.get(position));
+        holder.bind(listItem.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return listMovie.size();
+        return listItem.size();
     }
 
     class ListViewHolder extends RecyclerView.ViewHolder {
@@ -62,25 +62,25 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
             txtDescription = itemView.findViewById(R.id.txt_description);
         }
 
-        void bind(Movie movie) {
+        void bind(Item item) {
             Glide.with(itemView.getContext())
-                    .load(movie.getPoster())
+                    .load(item.getPoster())
                     .apply(new RequestOptions())
                     .transform(new RoundedCorners(30))
                     .into(imgPoster);
-            txtTitle.setText(movie.getTitle());
-            txtDescription.setText(movie.getDescription());
+            txtTitle.setText(item.getTitle());
+            txtDescription.setText(item.getDescription());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onItemClickCallback.onItemClicked(listMovie.get(getAdapterPosition()));
+                    onItemClickCallback.onItemClicked(listItem.get(getAdapterPosition()));
                 }
             });
         }
     }
 
     public interface OnItemClickCallback {
-        void onItemClicked(Movie movie);
+        void onItemClicked(Item item);
     }
 }
 
