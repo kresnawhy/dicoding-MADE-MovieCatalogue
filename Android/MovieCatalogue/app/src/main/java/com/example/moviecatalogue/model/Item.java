@@ -1,9 +1,9 @@
-package com.example.moviecatalogue;
+package com.example.moviecatalogue.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class Item implements Parcelable {
+public class Item implements Parcelable {
 
     private String poster;
     private String backdrop;
@@ -17,7 +17,7 @@ class Item implements Parcelable {
         description = in.readString();
     }
 
-    Item() {
+    public Item() {
         
     }
 
@@ -46,35 +46,35 @@ class Item implements Parcelable {
         }
     };
 
-    String getPoster() {
+    public String getPoster() {
         return poster;
     }
 
-    void setPoster(String poster) {
+    public void setPoster(String poster) {
         this.poster = poster;
     }
 
-    String getBackdrop() {
+    public String getBackdrop() {
         return backdrop;
     }
 
-    void setBackdrop(String backdrop) {
+    public void setBackdrop(String backdrop) {
         this.backdrop = backdrop;
     }
 
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

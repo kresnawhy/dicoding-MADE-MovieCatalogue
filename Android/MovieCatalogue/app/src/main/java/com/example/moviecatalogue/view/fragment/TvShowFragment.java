@@ -1,4 +1,4 @@
-package com.example.moviecatalogue;
+package com.example.moviecatalogue.view.fragment;
 
 
 import android.content.Intent;
@@ -14,6 +14,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.moviecatalogue.model.Item;
+import com.example.moviecatalogue.adapter.ListItemAdapter;
+import com.example.moviecatalogue.api.MainViewModel;
+import com.example.moviecatalogue.R;
+import com.example.moviecatalogue.view.activity.DetailActivity;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -21,15 +27,13 @@ import java.util.Objects;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MovieFragment extends Fragment {
-
-
+public class TvShowFragment extends Fragment {
     private RecyclerView rvMovies;
     private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
     private ListItemAdapter listItemAdapter;
 
-    public MovieFragment() {
+    public TvShowFragment() {
         // Required empty public constructor
     }
 
@@ -56,14 +60,14 @@ public class MovieFragment extends Fragment {
 
         MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
 
-        mainViewModel.setMovie();
+        mainViewModel.setTvShow();
 
         showLoading(true);
 
         listItemAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback() {
             @Override
             public void onItemClicked(Item item) {
-                showSelectedMovie(item);
+                showSelectedTvShow(item);
             }
         });
 
@@ -78,10 +82,10 @@ public class MovieFragment extends Fragment {
         });
     }
 
-    private void showSelectedMovie(Item item) {
-        Intent movieDetail = new Intent(getContext(), DetailActivity.class);
-        movieDetail.putExtra(DetailActivity.EXTRA_ITEM, item);
-        Objects.requireNonNull(getContext()).startActivity(movieDetail);
+    private void showSelectedTvShow(Item item) {
+        Intent tvshowDetail = new Intent(getContext(), DetailActivity.class);
+        tvshowDetail.putExtra(DetailActivity.EXTRA_ITEM, item);
+        Objects.requireNonNull(getContext()).startActivity(tvshowDetail);
     }
 
     private void showLoading(Boolean state) {

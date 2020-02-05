@@ -1,4 +1,4 @@
-package com.example.moviecatalogue;
+package com.example.moviecatalogue.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.moviecatalogue.R;
+import com.example.moviecatalogue.model.Item;
 
 import java.util.ArrayList;
 
@@ -20,17 +22,17 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListVi
     private ArrayList<Item> listItem;
     private OnItemClickCallback onItemClickCallback;
 
-    ListItemAdapter(ArrayList<Item> listItem) {
+    public ListItemAdapter(ArrayList<Item> listItem) {
         this.listItem = listItem;
     }
 
-    void setListItem(ArrayList<Item> list) {
+    public void setListItem(ArrayList<Item> list) {
         listItem.clear();
         listItem.addAll(list);
         notifyDataSetChanged();
     }
 
-    void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback;
     }
 
