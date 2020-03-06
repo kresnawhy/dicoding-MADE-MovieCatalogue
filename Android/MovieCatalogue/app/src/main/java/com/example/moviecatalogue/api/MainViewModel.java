@@ -47,10 +47,12 @@ public class MainViewModel extends ViewModel {
                     for (int i = 0; i < 10; i++) {
                         JSONObject movies = list.getJSONObject(i);
                         Item item = new Item();
+                        item.setId(movies.getString("id"));
                         item.setPoster("http://image.tmdb.org/t/p/w185" + movies.getString("poster_path"));
                         item.setBackdrop("http://image.tmdb.org/t/p/w780" + movies.getString("backdrop_path"));
                         item.setTitle(movies.getString("title"));
                         item.setDescription(movies.getString("overview"));
+                        item.setCategory("movie");
                         listMovies.add(item);
                     }
 
@@ -73,9 +75,9 @@ public class MainViewModel extends ViewModel {
         String url = "https://api.themoviedb.org/3/discover/tv?api_key=" + TMDB_API_KEY;
 
         if (language.equalsIgnoreCase("INDONESIA")) {
-            url = "https://api.themoviedb.org/3/discover/tv?api_key=" + TMDB_API_KEY + "&language=id-ID";
+            url += "&language=id-ID";
         }else if (language.equalsIgnoreCase("ENGLISH")) {
-            url = "https://api.themoviedb.org/3/discover/tv?api_key=" + TMDB_API_KEY + "&language=en-US";
+            url += "&language=en-US";
         }
 
         client.get(url, new AsyncHttpResponseHandler() {
@@ -89,10 +91,12 @@ public class MainViewModel extends ViewModel {
                     for (int i = 0; i < 10; i++) {
                         JSONObject tv_shows = list.getJSONObject(i);
                         Item item = new Item();
+                        item.setId(tv_shows.getString("id"));
                         item.setPoster("http://image.tmdb.org/t/p/w185" + tv_shows.getString("poster_path"));
                         item.setBackdrop("http://image.tmdb.org/t/p/w780" + tv_shows.getString("backdrop_path"));
                         item.setTitle(tv_shows.getString("name"));
                         item.setDescription(tv_shows.getString("overview"));
+                        item.setCategory("tv_show");
                         listTvShows.add(item);
                     }
 

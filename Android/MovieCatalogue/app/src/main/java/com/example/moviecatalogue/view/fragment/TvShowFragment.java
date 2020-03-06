@@ -3,6 +3,7 @@ package com.example.moviecatalogue.view.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +29,10 @@ import java.util.Objects;
  * A simple {@link Fragment} subclass.
  */
 public class TvShowFragment extends Fragment {
-    private RecyclerView rvMovies;
+    private RecyclerView rvTvShows;
     private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
-    private ListItemAdapter listItemAdapter;
+    private ListItemAdapter listTvShowAdapter;
 
     public TvShowFragment() {
         // Required empty public constructor
@@ -42,9 +43,9 @@ public class TvShowFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_movie, container, false);
+        View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
-        rvMovies = view.findViewById(R.id.rv_movies);
+        rvTvShows = view.findViewById(R.id.rv_items);
         progressBar = view.findViewById(R.id.progressBar);
 
         showRecyclerList();
@@ -53,10 +54,10 @@ public class TvShowFragment extends Fragment {
     }
 
     private void showRecyclerList(){
-        rvMovies.setLayoutManager(new LinearLayoutManager(getActivity()));
-        listItemAdapter = new ListItemAdapter(items);
-        listItemAdapter.notifyDataSetChanged();
-        rvMovies.setAdapter(listItemAdapter);
+        rvTvShows.setLayoutManager(new LinearLayoutManager(getActivity()));
+        listTvShowAdapter = new ListItemAdapter(items);
+        listTvShowAdapter.notifyDataSetChanged();
+        rvTvShows.setAdapter(listTvShowAdapter);
 
         MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
 
@@ -64,7 +65,7 @@ public class TvShowFragment extends Fragment {
 
         showLoading(true);
 
-        listItemAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback() {
+        listTvShowAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback() {
             @Override
             public void onItemClicked(Item item) {
                 showSelectedTvShow(item);
@@ -75,7 +76,7 @@ public class TvShowFragment extends Fragment {
             @Override
             public void onChanged(ArrayList<Item> items) {
                 if (items != null) {
-                    listItemAdapter.setListItem(items);
+                    listTvShowAdapter.setListItem(items);
                     showLoading(false);
                 }
             }
@@ -84,7 +85,7 @@ public class TvShowFragment extends Fragment {
 
     private void showSelectedTvShow(Item item) {
         Intent tvshowDetail = new Intent(getContext(), DetailActivity.class);
-        tvshowDetail.putExtra(DetailActivity.EXTRA_ITEM, item);
+        tvshowDetail.putExtra(DetailActivity.EXTRA_ITEM, (Parcelable) item);
         Objects.requireNonNull(getContext()).startActivity(tvshowDetail);
     }
 
@@ -95,5 +96,4 @@ public class TvShowFragment extends Fragment {
             progressBar.setVisibility(View.GONE);
         }
     }
-
 }

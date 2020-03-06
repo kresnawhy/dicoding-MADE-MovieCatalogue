@@ -8,4 +8,8 @@
     <string name="tab_tv_show">Acara TV</string>
     <string name="change_language_settings">Ubah Bahasa</string>
     <string name="synopsis">Sinopsis</string>
+    <string name="title_discover">Temukan</string>
+    <string name="title_favorite">Favorit</string>
+    <string name="add_to_favorite">Tambahkan ke Favorit</string>
+    <string name="delete_from_favorite">Hapus dari Favorit</string>
 </resources>

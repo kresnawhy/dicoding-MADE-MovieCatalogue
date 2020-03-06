@@ -3,6 +3,7 @@ package com.example.moviecatalogue.view.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,12 +29,10 @@ import java.util.Objects;
  * A simple {@link Fragment} subclass.
  */
 public class MovieFragment extends Fragment {
-
-
     private RecyclerView rvMovies;
     private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
-    private ListItemAdapter listItemAdapter;
+    private ListItemAdapter listMovieAdapter;
 
     public MovieFragment() {
         // Required empty public constructor
@@ -44,9 +43,9 @@ public class MovieFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_movie, container, false);
+        View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
-        rvMovies = view.findViewById(R.id.rv_movies);
+        rvMovies = view.findViewById(R.id.rv_items);
         progressBar = view.findViewById(R.id.progressBar);
 
         showRecyclerList();
@@ -56,9 +55,9 @@ public class MovieFragment extends Fragment {
 
     private void showRecyclerList(){
         rvMovies.setLayoutManager(new LinearLayoutManager(getActivity()));
-        listItemAdapter = new ListItemAdapter(items);
-        listItemAdapter.notifyDataSetChanged();
-        rvMovies.setAdapter(listItemAdapter);
+        listMovieAdapter = new ListItemAdapter(items);
+        listMovieAdapter.notifyDataSetChanged();
+        rvMovies.setAdapter(listMovieAdapter);
 
         MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
 
@@ -66,7 +65,7 @@ public class MovieFragment extends Fragment {
 
         showLoading(true);
 
-        listItemAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback() {
+        listMovieAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback() {
             @Override
             public void onItemClicked(Item item) {
                 showSelectedMovie(item);
@@ -77,7 +76,7 @@ public class MovieFragment extends Fragment {
             @Override
             public void onChanged(ArrayList<Item> items) {
                 if (items != null) {
-                    listItemAdapter.setListItem(items);
+                    listMovieAdapter.setListItem(items);
                     showLoading(false);
                 }
             }
@@ -86,7 +85,7 @@ public class MovieFragment extends Fragment {
 
     private void showSelectedMovie(Item item) {
         Intent movieDetail = new Intent(getContext(), DetailActivity.class);
-        movieDetail.putExtra(DetailActivity.EXTRA_ITEM, item);
+        movieDetail.putExtra(DetailActivity.EXTRA_ITEM, (Parcelable) item);
         Objects.requireNonNull(getContext()).startActivity(movieDetail);
     }
 
@@ -97,5 +96,4 @@ public class MovieFragment extends Fragment {
             progressBar.setVisibility(View.GONE);
         }
     }
-
 }
