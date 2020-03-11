@@ -16,6 +16,8 @@ import com.example.moviecatalogue.R;
 import com.example.moviecatalogue.adapter.SectionPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Objects;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -39,8 +41,6 @@ public class ItemContainerFragment extends Fragment {
         viewPager.setAdapter(sectionPagerAdapter);
         TabLayout tabs = view.findViewById(R.id.discover_tabs);
         tabs.setupWithViewPager(viewPager);
-        if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setElevation(0);
-        }
+        Objects.requireNonNull(((AppCompatActivity) Objects.requireNonNull(getActivity())).getSupportActionBar()).setElevation(0);
     }
 }

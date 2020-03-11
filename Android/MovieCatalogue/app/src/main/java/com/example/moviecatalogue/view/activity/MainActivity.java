@@ -1,9 +1,6 @@
 package com.example.moviecatalogue.view.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -13,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.example.moviecatalogue.R;
 import com.example.moviecatalogue.view.fragment.FavoriteContainerFragment;
 import com.example.moviecatalogue.view.fragment.ItemContainerFragment;
+import com.example.moviecatalogue.view.fragment.SettingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -38,20 +36,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_change_settings) {
-            Intent localization = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-            startActivity(localization);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
@@ -61,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
             case R.id.navigation_favorite:
                 fragment = new FavoriteContainerFragment();
+                break;
+            case R.id.action_change_settings:
+                fragment = new SettingFragment();
                 break;
         }
         return loadFragment(fragment);

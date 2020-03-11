@@ -18,7 +18,6 @@ import com.example.moviecatalogue.model.Item;
 import java.util.ArrayList;
 
 public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListViewHolder> {
-
     private ArrayList<Item> listItem;
     private OnItemClickCallback onItemClickCallback;
 
@@ -26,9 +25,9 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListVi
         this.listItem = listItem;
     }
 
-    public void setListItem(ArrayList<Item> list) {
+    public void setListItem(ArrayList<Item> items) {
         listItem.clear();
-        listItem.addAll(list);
+        listItem.addAll(items);
         notifyDataSetChanged();
     }
 

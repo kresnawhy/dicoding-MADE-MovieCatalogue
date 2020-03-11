@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -32,6 +33,7 @@ public class TvShowFragment extends Fragment {
     private RecyclerView rvTvShows;
     private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
+    private SearchView searchView;
     private ListItemAdapter listTvShowAdapter;
 
     public TvShowFragment() {
@@ -47,8 +49,10 @@ public class TvShowFragment extends Fragment {
 
         rvTvShows = view.findViewById(R.id.rv_items);
         progressBar = view.findViewById(R.id.progressBar);
+        searchView = view.findViewById(R.id.search_view);
 
         showRecyclerList();
+        searchAction();
 
         return view;
     }
@@ -79,6 +83,48 @@ public class TvShowFragment extends Fragment {
                     listTvShowAdapter.setListItem(items);
                     showLoading(false);
                 }
+            }
+        });
+    }
+
+    private void showSearchList(String query) {
+        MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+        mainViewModel.searchTvShow(query);
+        showLoading(true);
+        listTvShowAdapter.notifyDataSetChanged();
+
+        if (getActivity() != null) {
+            mainViewModel.getItem().observe(getActivity(), new Observer<ArrayList<Item>>() {
+                @Override
+                public void onChanged(ArrayList<Item> items) {
+                    if (items != null) {
+                        listTvShowAdapter.setListItem(items);
+                        showLoading(false);
+                    }
+                }
+            });
+        }
+    }
+
+    private void searchAction() {
+        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                showSearchList(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                showSearchList(newText);
+                return false;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                showRecyclerList();
+                return false;
             }
         });
     }

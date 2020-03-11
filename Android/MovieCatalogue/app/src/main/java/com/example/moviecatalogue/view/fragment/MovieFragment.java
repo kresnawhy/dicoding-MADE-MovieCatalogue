@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -32,12 +33,12 @@ public class MovieFragment extends Fragment {
     private RecyclerView rvMovies;
     private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
+    private SearchView searchView;
     private ListItemAdapter listMovieAdapter;
 
     public MovieFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,8 +48,10 @@ public class MovieFragment extends Fragment {
 
         rvMovies = view.findViewById(R.id.rv_items);
         progressBar = view.findViewById(R.id.progressBar);
+        searchView = view.findViewById(R.id.search_view);
 
         showRecyclerList();
+        searchAction();
 
         return view;
     }
@@ -79,6 +82,48 @@ public class MovieFragment extends Fragment {
                     listMovieAdapter.setListItem(items);
                     showLoading(false);
                 }
+            }
+        });
+    }
+
+    private void showSearchList(String query) {
+        MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+        mainViewModel.searchMovie(query);
+        showLoading(true);
+        listMovieAdapter.notifyDataSetChanged();
+
+        if (getActivity() != null) {
+            mainViewModel.getItem().observe(getActivity(), new Observer<ArrayList<Item>>() {
+                @Override
+                public void onChanged(ArrayList<Item> items) {
+                    if (items != null) {
+                        listMovieAdapter.setListItem(items);
+                        showLoading(false);
+                    }
+                }
+            });
+        }
+    }
+
+    private void searchAction() {
+        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                showSearchList(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                showSearchList(newText);
+                return false;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                showRecyclerList();
+                return false;
             }
         });
     }
