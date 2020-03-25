@@ -14,16 +14,17 @@ public class ItemProvider extends ContentProvider {
     private static final String AUTHORITY = "com.example.moviecatalogue";
     private static final String MOVIE_PATH = "movie";
     private static final String TV_PATH = "tv_show";
-    private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+    private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     static {
-        sUriMatcher.addURI(AUTHORITY, MOVIE_PATH, 1);
-        sUriMatcher.addURI(AUTHORITY, TV_PATH, 2);
+        uriMatcher.addURI(AUTHORITY, MOVIE_PATH, 1);
+        uriMatcher.addURI(AUTHORITY, TV_PATH, 2);
     }
 
     AppDatabase appDatabase;
 
     public ItemProvider() {
+
     }
 
     @Override
@@ -49,8 +50,7 @@ public class ItemProvider extends ContentProvider {
     public boolean onCreate() {
         // TODO: Implement this to initialize your content provider on startup.
         String DBNAME = "itemdb";
-        appDatabase = Room.databaseBuilder(getContext(),
-                AppDatabase.class, DBNAME).allowMainThreadQueries().build();
+        appDatabase = Room.databaseBuilder(getContext(), AppDatabase.class, DBNAME).allowMainThreadQueries().build();
         return true;
     }
 
@@ -59,7 +59,7 @@ public class ItemProvider extends ContentProvider {
                         String[] selectionArgs, String sortOrder) {
         // TODO: Implement this to handle query requests from clients.
         Cursor cursor = null;
-        switch (sUriMatcher.match(uri)) {
+        switch (uriMatcher.match(uri)) {
             case 1:
                 cursor = appDatabase.itemDAO().selectMovieProvider();
                 break;

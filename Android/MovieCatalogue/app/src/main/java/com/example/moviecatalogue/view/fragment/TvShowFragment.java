@@ -1,10 +1,14 @@
 package com.example.moviecatalogue.view.fragment;
 
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -16,10 +20,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.moviecatalogue.model.Item;
+import com.example.moviecatalogue.R;
 import com.example.moviecatalogue.adapter.ListItemAdapter;
 import com.example.moviecatalogue.api.MainViewModel;
-import com.example.moviecatalogue.R;
+import com.example.moviecatalogue.model.Item;
 import com.example.moviecatalogue.view.activity.DetailActivity;
 
 import java.util.ArrayList;
@@ -33,7 +37,6 @@ public class TvShowFragment extends Fragment {
     private RecyclerView rvTvShows;
     private ArrayList<Item> items = new ArrayList<>();
     private ProgressBar progressBar;
-    private SearchView searchView;
     private ListItemAdapter listTvShowAdapter;
 
     public TvShowFragment() {
@@ -49,12 +52,39 @@ public class TvShowFragment extends Fragment {
 
         rvTvShows = view.findViewById(R.id.rv_items);
         progressBar = view.findViewById(R.id.progressBar);
-        searchView = view.findViewById(R.id.search_view);
-
+        setHasOptionsMenu(true);
         showRecyclerList();
-        searchAction();
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main_menu, menu);
+
+        final MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+
+        if (searchManager != null) {
+            SearchView searchView = (SearchView) (menu.findItem(R.id.search)).getActionView();
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+
+            searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    search(mainViewModel, query);
+                    return true;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    search(mainViewModel, newText);
+                    return false;
+                }
+            });
+        }
     }
 
     private void showRecyclerList(){
@@ -87,8 +117,7 @@ public class TvShowFragment extends Fragment {
         });
     }
 
-    private void showSearchList(String query) {
-        MainViewModel mainViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(MainViewModel.class);
+    private void search(MainViewModel mainViewModel, String query) {
         mainViewModel.searchTvShow(query);
         showLoading(true);
         listTvShowAdapter.notifyDataSetChanged();
@@ -104,29 +133,6 @@ public class TvShowFragment extends Fragment {
                 }
             });
         }
-    }
-
-    private void searchAction() {
-        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                showSearchList(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                showSearchList(newText);
-                return false;
-            }
-        });
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-            @Override
-            public boolean onClose() {
-                showRecyclerList();
-                return false;
-            }
-        });
     }
 
     private void showSelectedTvShow(Item item) {

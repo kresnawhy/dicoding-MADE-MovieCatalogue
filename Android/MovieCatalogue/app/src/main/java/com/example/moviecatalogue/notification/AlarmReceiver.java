@@ -128,9 +128,9 @@ public class AlarmReceiver extends BroadcastReceiver {
         return PendingIntent.getActivity(context, notificationId, intent, 0);
     }
 
-    private void showAlarmNotification(Context context, String title, @Nullable String message, int notifId, @Nullable Item item) {
+    private void showAlarmNotification(Context context, String title, @Nullable String message, int notificationId, @Nullable Item item) {
         String CHANNEL_ID = "Channel_1";
-        String CHANNEL_NAME = "AlarmManager chanel";
+        String CHANNEL_NAME = "AlarmManager channel";
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
@@ -159,7 +159,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         }
 
-        PendingIntent pendingIntent = getPendingIntent(context, notifId, item);
+        PendingIntent pendingIntent = getPendingIntent(context, notificationId, item);
         if (pendingIntent != null) {
             builder.setContentIntent(pendingIntent);
         }
@@ -179,7 +179,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Notification notification = builder.build();
 
         if (notificationManager != null) {
-            notificationManager.notify(notifId, notification);
+            notificationManager.notify(notificationId, notification);
         }
     }
 }
